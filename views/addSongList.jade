@@ -1,0 +1,12 @@
+//- addSongList.jade
+extends ./layout.jade
+
+block content
+  form(role='form',method='post',action='/addSongList')
+      div
+        label(for='listname') 歌单名
+        input(type='text' name='listname')
+      div
+        label(for='intro') 简介
+        input(type='text' name='intro')
+      button(type='submit')#submit_btn 提交

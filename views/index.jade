@@ -3,3 +3,28 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  h2 歌单列表：
+    table(border="1")
+      tr
+        th 列表名
+        th 描述
+        th 歌曲数
+        th 创建时间
+        th 操作
+      tbody
+      -for(var i in listItem){
+        -console.log(listItem[i])
+        tr
+          td= listItem[i].ListName
+          td= listItem[i].Description
+          td= listItem[i].Musics.length
+          td= listItem[i].CreateDate
+          td
+            a(href="/songList/"+listItem[i]._id)操作
+      -}
+  a(href="/addSongList") 新建歌单
+
+  h3 API说明
+  p /getSongList     获取所有歌单
+  p /getSongByList/  + id  获取指定ID的歌单的歌曲
+

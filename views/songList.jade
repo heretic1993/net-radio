@@ -1,0 +1,24 @@
+//- songList.jade
+
+extends layout
+
+block content
+  h1 #{SongList.ListName}的歌曲
+  table(border="1")
+    tr
+      th 歌曲名
+      th 作者
+      th 地址
+      th 图片
+      th 操作
+    tbody
+      -for(var i=0;i<SongList.Musics.length;i++){
+       tr
+         td= SongList.Musics[i].Name
+         td= SongList.Musics[i].Author
+         td= SongList.Musics[i].Src
+         td
+           img(src=SongList.Musics[i].Img)
+         td
+      -}
+  a(href="/addSong/"+SongList._id) 添加歌曲

@@ -1,0 +1,20 @@
+//- addSong.jade
+
+extends ./layout.jade
+
+block content
+  h1 添加歌曲到歌单
+  form(role='form',method='post',action='/addSong/'+songList,enctype="multipart/form-data")
+      div
+        label(for='name') 歌曲名
+        input(type='text' name='name')
+      div
+        label(for='author') 作者
+        input(type='text' name='author')
+      div
+        label(for='song') 歌曲文件
+        input(type='file' name='song')#song
+      div
+        label(for='image') 歌曲图片
+        input(type='file' name='image')#image
+      button(type='submit')#submit_btn 提交

@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var mongoose = require('mongoose');
+
 
 var app = express();
 
@@ -54,7 +55,7 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
+mongoose.connect('mongodb://localhost/netradio');
 app.listen(3000);
 
 module.exports = app;
